@@ -19,10 +19,17 @@ public class Taxes {
 		}
 	}
 
+	public static double calculateTax(int salary) {
+		int percentage = calculateTaxPercentage(salary);
+		double tax = (percentage / 100.0) * salary;
+		System.out.println("The amount of tax for a salary of £" + salary + " is £" + tax);
+		return tax;
+	}
+
 	public static void main(String[] args) {
-		System.out.println(calculateTaxPercentage(16799));
-		System.out.println(calculateTaxPercentage(25678));
-		System.out.println(calculateTaxPercentage(31233));
+		System.out.println(calculateTax(16799));
+		System.out.println(calculateTax(25678));
+		System.out.println(calculateTax(31233));
 	}
 
 }
